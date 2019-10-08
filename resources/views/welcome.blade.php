@@ -41,6 +41,12 @@
           <li class="nav-item">
               <a class="nav-link float-right" href="#">User</a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link float-right" href="/login">Login</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link float-right" href="/register">Register</a>
+                </li>
         </ul>
       </nav>
   <br>
