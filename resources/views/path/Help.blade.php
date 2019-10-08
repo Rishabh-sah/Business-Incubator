@@ -1,5 +1,7 @@
 @extends('layout.basic')
 @section('content')
+<link rel="canonical" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
 <body>
         <div class='container'>
                 <nav class="navbar navbar-expand-sm bg-primary navbar-dark">

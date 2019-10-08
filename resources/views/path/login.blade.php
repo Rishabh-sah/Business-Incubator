@@ -1,7 +1,7 @@
 @extends('layout.basic')
 @section('content')
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/sign-in/">
+<link rel="canonical" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
     <!-- Bootstrap core CSS -->
 

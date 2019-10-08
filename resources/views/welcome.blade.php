@@ -1,7 +1,6 @@
 @extends('layout.basic')
 @section('content')
-<link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/sign-in/">
-
+<link rel="canonical" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <!-- Bootstrap core CSS -->
 
     <style>
@@ -44,10 +43,16 @@
             </li>
         </ul>
       </nav>
-<br>
   <br>
   <div>
-      
+      <h1>Why Register?</h1>
+      <table class='table-bordered table-dark'>
+        <tr><p>Get Latest Property News and Updates</p></tr>
+        <tr><p>Get Market informtion,reports and Trends</p></tr>
+        <tr><p>Get Market infy Alerts</p></tr>
+        <tr><p>Advertise your property and get it listed for free</p></tr>
+        <tr><p>Easy Buying, Selling and Renting</p></tr>
+      </table>
   </div>
   <footer>©Copyright</footer>
 </div>
