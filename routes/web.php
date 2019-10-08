@@ -21,7 +21,7 @@ Route::get('/buyer', 'PagesController@bdashboard');
 Route::get('/help', 'PagesController@help');
 Route::get('/search', 'PagesController@search');
 Route::get('/seller/addproperty', 'PagesController@addproperty');
-Route::resource('adds','AddsController');
+Route::resource('properties','AddsController');
 Route::get('/reg/{id}', function ($id) {
     return 'This is user '.$id;
 });
