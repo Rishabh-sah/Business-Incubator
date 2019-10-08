@@ -15,7 +15,7 @@ class AddsController extends Controller
      */
     public function index()
     {
-        $adds=add::all();
+        $adds=add::orderBy('created_at','desc')->paginate(5);
         return view('adds.index')->with('adds', $adds);
     }
 
@@ -26,7 +26,7 @@ class AddsController extends Controller
      */
     public function create()
     {
-        //
+        return view('path.addproperty');
     }
 
     /**
@@ -37,7 +37,15 @@ class AddsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $add= new add;
+        $add->Pname = $request->input('Pname');
+        $add->Address = $request->input('Address');
+        $add->Area = $request->input('Area');
+        $add->Type = $request->input('Type');
+        $add->Price = $request->input('Price');
+        $add->Status = 1;
+        $add->save();
+        return redirect('/properties')->with('success','Property Added');
     }
 
     /**
@@ -48,7 +56,7 @@ class AddsController extends Controller
      */
     public function show($id)
     {
-        //
+        return add::find($id);
     }
 
     /**

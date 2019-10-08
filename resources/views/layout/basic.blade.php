@@ -7,7 +7,9 @@
     <title>Workplace</title>
 <link rel="stylesheet" href="{{asset('css/app.css')}}">
 </head>
-<body>
+<body><div class='container'>
+    @include('inc.nav')
+    @include('inc.message')
     @yield('content')
 </body>
 </html>

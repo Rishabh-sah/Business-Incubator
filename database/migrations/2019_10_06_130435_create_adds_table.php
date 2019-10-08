@@ -20,7 +20,7 @@ class CreateAddsTable extends Migration
             $table->string('Type');
             $table->integer('Price');
             $table->integer('Area');
-            $table->string('Status');
+            $table->integer('Status');
             $table->timestamps();
         });
     }
