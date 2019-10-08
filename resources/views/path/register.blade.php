@@ -37,14 +37,8 @@
                     <hr>
                     <label for="name"><b>Name</b></label>
                     <input type="text" placeholder="Enter name" class='form-control' name="name" required>
-                    <label for="address"><b>Address</b></label>
-                    <input type="text" placeholder="Enter address" class='form-control' name="address" required>
                     <label for="phone"><b>Contact</b></label>
-                    <input type="tel" placeholder="Enter phone " class='form-control' name="phone" required>
-                    <div><b>Gender</b></div>
-                    <input type="radio" name="gender"value="male" checked> Male<br>
-                     <input type="radio" name="gender" value="female"> Female<br>
-                     <input type="radio" name="gender" value="other"> Other<br>  
+                    <input type="tel" placeholder="Enter phone " class='form-control' name="phone" required> 
                     <label for="email"><b>Email</b></label>
                     <input type="text" placeholder="Enter Email" class='form-control' name="email" required>
                     <label for="psw"><b>Password</b></label>

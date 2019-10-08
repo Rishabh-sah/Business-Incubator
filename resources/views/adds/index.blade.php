@@ -44,33 +44,20 @@
           </ul>
         </nav>
         <br>
-        @if(count($adds)>1)
+        <h1>Properties</h1>
+        @if(count($adds)>0)
         @foreach($adds as $add)
-        <div class='well'>
-            <h3>{{$add->$pname}}</h3>
+        <div class='card'>
+            <div class='container'>
+            <h3><a href='/adds/{{$add->id}}'>{{$add->Pname}}</a></h3>
+            <h5>Price= {{$add->Price}} ({{$add->Type}})</h5><h5>Location={{$add->Address}}</h5><h5>Area of Land(in Sq.Ft)={{$add->Area}}</h5>
         </div>
+        </div>
+        <br>
         @endforeach
         @else
         <p>No Properties Found</p>
         @endif
-      {{-- <table style="width:100%">
-            <tr>
-              <th>Propertyname</th>
-              <th>Address</th>
-              <th>Type</th>
-              <th>Price</th>
-              <th>Area</th>
-              <th>Status</th>
-            </tr>
-            <tr>
-              <td>Shiv Tapasya</td>
-              <td>Borivali</td>
-              <td>Rent</td>
-              <td>1500</td>
-              <td>1500</td>
-              <td>pending</td>
-            </tr>
-        </table> --}}
         <div>
         <button class='btn btn-primary' onclick="location.href='/seller/addproperty'">ADD PROPERTY</button>
         <button type="submit" class='btn btn-danger float-right'>DELETE PROPERTY</button>

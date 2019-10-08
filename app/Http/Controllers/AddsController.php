@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\add;
+use DB;
 
 class AddsController extends Controller
 {
@@ -13,7 +15,8 @@ class AddsController extends Controller
      */
     public function index()
     {
-        //
+        $adds=add::all();
+        return view('adds.index')->with('adds', $adds);
     }
 
     /**
