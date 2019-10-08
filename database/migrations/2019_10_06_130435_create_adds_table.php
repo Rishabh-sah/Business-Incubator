@@ -1,0 +1,37 @@
+<?php
+
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class CreateAddsTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('adds', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('Pname');
+            $table->mediumText('Address');
+            $table->string('Type');
+            $table->integer('Price');
+            $table->integer('Area');
+            $table->string('Status');
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('adds');
+    }
+}
