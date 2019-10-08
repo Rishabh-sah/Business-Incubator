@@ -47,6 +47,7 @@
               <th>Propertyname</th>
               <th>Address</th>
               <th>Type</th>
+              <th>Price</th>
               <th>Area</th>
               <th>Status</th>
             </tr>
@@ -54,6 +55,7 @@
               <td>Shiv Tapasya</td>
               <td>Borivali</td>
               <td>Rent</td>
+              <td>1500</td>
               <td>1500</td>
               <td>pending</td>
             </tr>
