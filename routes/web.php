@@ -21,11 +21,6 @@ Route::get('/buyer', 'PagesController@bdashboard');
 Route::get('/help', 'PagesController@help');
 Route::get('/search', 'PagesController@search');
 Route::get('/seller/addproperty', 'PagesController@addproperty');
-Route::resource('adds','AddsController');
-Route::get('/reg/{id}', function ($id) {
-    return 'This is user '.$id;
-});
-
+Route::resource('properties','AddsController');
 Auth::routes();
-
 Route::get('/home', 'HomeController@index')->name('home');

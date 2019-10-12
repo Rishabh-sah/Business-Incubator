@@ -45,7 +45,7 @@
                     </li>
                 </ul>
               </nav>
-    <form action="search" method="post">
+    {{-- <form action="search" method="post">
 
             <div class="container">
                         
@@ -61,6 +61,25 @@
                     <button type="submit" class="btn btn-lg btn-primary btn-block">Search</button>
                   </div>
                   <hr>
-      </form>
+      </form> --}}
+      {!!Form::open(['action'=>'SearchesController@show','method'=>'POST'])!!}
+      {{Form::label('Address','Location')}}
+      {{Form::text('Address','',['class'=>'form-control','placeholder'=>'Location'])}}
+      <br />
+      {{Form::label('Area','Area')}}
+      {{Form::number('Area','',['class'=>'form-control','placeholder'=>'Area in sq.ft'])}}
+      <br />
+      {{Form::label('Type','Type')}}<br>
+      <select name="Type">
+              <option value='rent'>Rent</option>
+              <option value='sell'>Sell</option>
+      </select>
+      <br />
+      {{Form::label('Price','Budget')}}
+      {{Form::number('Price','',['class'=>'form-control','placeholder'=>'Budget'])}}
+      
+      <br />
+      {{Form::submit('Submit',['class'=>'btn btn-primary'])}}
+      {!!Form::close()!!}
     </div >
 @endsection
