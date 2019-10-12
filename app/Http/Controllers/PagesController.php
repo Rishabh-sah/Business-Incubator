@@ -27,4 +27,7 @@ class PagesController extends Controller
     public function help(){
         return view('path.help');
     }
+    public function available(){
+        return view('path.available');
+    }
 }

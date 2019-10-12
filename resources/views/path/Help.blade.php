@@ -1,4 +1,4 @@
-@extends('layout.basic')
+@extends('layouts.basic')
 @section('content')
 <link rel="canonical" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>

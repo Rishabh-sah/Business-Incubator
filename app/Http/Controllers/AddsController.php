@@ -45,7 +45,7 @@ class AddsController extends Controller
         $add->Price = $request->input('Price');
         $add->Status = 1;
         $add->save();
-        return redirect('/properties')->with('success','Property Added');
+        return redirect('/properties')->with('success','Property Added Suscessfully');
     }
 
     /**
@@ -58,7 +58,7 @@ class AddsController extends Controller
     {
         return add::find($id);
     }
-
+    
     /**
      * Show the form for editing the specified resource.
      *

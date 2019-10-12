@@ -1,4 +1,4 @@
-@extends('layout.basic')
+@extends('layouts.basic')
 @section('content')
 <link rel="canonical" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
@@ -24,9 +24,9 @@
    
 </head>
 <body>
-    <form action="search" method="post">
-
-            <div class="container">
+    {{-- <form action="/available" method="POST">
+ --}}
+            {{-- <div class="container">
                         
                     <h1>Enter the details for required property</h1>
                     <label for="address"><b>Address</b></label>
@@ -38,7 +38,26 @@
                     <label for="budget"><b>Budget</b></label>
                     <input type="number" placeholder="Enter Budget" class='form-control' name="budget" required>
                     <button type="submit" class="btn btn-lg btn-primary btn-block">Search</button>
-                  </div>
-                  <hr>
-      </form>
+                  </div> --}}
+                  {!!Form::open(['action'=>'SearchesController@show','method'=>'POST'])!!}
+                  {{Form::label('Address','Location')}}
+                  {{Form::text('Address','',['class'=>'form-control','placeholder'=>'Location'])}}
+                  <br />
+                  {{Form::label('Area','Area')}}
+                  {{Form::number('Area','',['class'=>'form-control','placeholder'=>'Area in sq.ft'])}}
+                  <br />
+                  {{Form::label('Type','Type')}}<br>
+                  <select name="Type">
+                          <option value='rent'>Rent</option>
+                          <option value='sell'>Sell</option>
+                  </select>
+                  <br />
+                  {{Form::label('Price','Price')}}
+                  {{Form::number('Price','',['class'=>'form-control','placeholder'=>'Enter Budget'])}}
+                  
+                  <br />
+                  {{Form::submit('Submit',['class'=>'btn btn-primary'])}}
+                  {!!Form::close()!!}
+                              <hr>
+      
 @endsection

@@ -1,4 +1,4 @@
-@extends('layout.basic')
+@extends('layouts.basic')
 @section('content')
 <link rel="canonical" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <!-- Bootstrap core CSS -->
@@ -31,5 +31,7 @@
         <tr><td><p>Easy Buying, Selling and Renting</p></td></tr>
       </table>
   </div>
+  <button class='btn btn-primary' onclick="location.href='/properties'">Show my Properties</button>
+  <button type="submit" class='btn btn-default float-right' onclick="location.href='/search'">Search Properties</button>
   <footer>©Copyright 2019</footer>
   @endsection

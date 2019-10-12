@@ -1,6 +1,8 @@
 @extends('layouts.basic')
 @section('content')
+
 <link rel="canonical" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
     <!-- Bootstrap core CSS -->
 
     <style>
@@ -20,8 +22,9 @@
       }
     </style>
     <!-- Custom styles for this template -->
-</head>
-<body >
+    
+  </head>
+  <body>
         <br>
         <h1>Properties</h1>
         @if(count($adds)>0)
@@ -39,7 +42,6 @@
         <p>No Properties Found</p>
         @endif
         <div>
-        <button class='btn btn-primary' onclick="location.href='/seller/addproperty'">ADD PROPERTY</button>
-        <button type="submit" class='btn btn-danger float-right'>DELETE PROPERTY</button>
-        </div>
-@endsection 
+
+@endsection
+ 
