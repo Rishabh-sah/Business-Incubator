@@ -20,10 +20,12 @@ Route::get('/seller', 'PagesController@sdashboard');
 Route::get('/buyer', 'PagesController@bdashboard');
 Route::get('/help', 'PagesController@help');
 Route::get('/search', 'PagesController@search');
-Route::get('/available', 'PagesController@available');
 Route::get('/seller/addproperty', 'PagesController@addproperty');
-Route::resource('properties','AddsController');
-Route::resource('available','SearchesController');
+Route::resource('adds','AddsController');
 Route::get('/reg/{id}', function ($id) {
     return 'This is user '.$id;
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
