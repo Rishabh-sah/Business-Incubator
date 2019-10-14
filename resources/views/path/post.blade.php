@@ -25,20 +25,20 @@
         <br>
         <h1>Properties</h1>
         @if(count($adds)>0)
-        @foreach($adds as $add)
+        
         <div class='card'>
             <div class='container'>
-            <h3><a href='properties/{{$add->id}}'>{{$add->Pname}}</a></h3>
-            <h5>Price= {{$add->Price}} ({{$add->Type}})</h5><h5>Location={{$add->Address}}</h5><h5>Area of Land(in Sq.Ft)={{$add->Area}}</h5>
+            <h3>{{$adds->Pname}}</a></h3>
+            <h5>Price= {{$adds->Price}} ({{$adds->Type}})</h5><h5>Location={{$adds->Address}}</h5><h5>Area of Land(in Sq.Ft)={{$adds->Area}}</h5>
+             
         </div>
         </div>
         <br>
-        @endforeach
-        {{$adds->links()}}
+        
         @else
         <p>No Properties Found</p>
         @endif
         <div>
+        <button class='btn btn-default' onclick="location.href='/properties'">Go Back</button>
         </div>
 @endsection 
-{{-- /properties/{{$add->id}} --}}

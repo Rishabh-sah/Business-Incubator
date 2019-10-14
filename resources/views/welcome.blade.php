@@ -24,17 +24,17 @@
 <body>
   <div class='container'>
   <br>
-  <div>
-      <table class='table table-bordered'>
+    
+       <table class='table table-bordered'>
         <th>Why Register?</th>
         <tr><td><p>Get Latest Property News and Updates</p></td></tr>
         <tr><td><p>Get Market informtion,reports and Trends</p></td></tr>
         <tr><td><p>Get Market infy Alerts</p></td></tr>
         <tr><td><p>Advertise your property and get it listed for free</p></td></tr>
         <tr><td><p>Easy Buying, Selling and Renting</p></td></tr>
-      </table>
-  </div>
-  <button class='btn btn-primary' onclick="location.href='/properties'">SHOW MY PROPERTIES</button>
+      </table> 
+  
+  <button class='btn btn-primary' onclick="location.href='/properties'">SHOW ALL PROPERTIES</button>
         <button class='btn btn-primary float-right' onclick="location.href='/search'">SEARCH PROPERTIES</button>
   <footer>©Copyright 2019</footer>
 </div>

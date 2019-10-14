@@ -5,6 +5,7 @@ use App\add;
 use DB;
 class AddsController extends Controller
 {
+    
     /**
      * Display a listing of the resource.
      *
@@ -38,9 +39,10 @@ class AddsController extends Controller
         $add->Area = $request->input('Area');
         $add->Type = $request->input('Type');
         $add->Price = $request->input('Price');
+        $add->user_id = auth()->user()->id;
         $add->Status = 1;
         $add->save();
-        return redirect('/properties')->with('success','Property Added');
+        return redirect('/home')->with('success','Property Added');
     }
     /**
      * Display the specified resource.
@@ -50,7 +52,8 @@ class AddsController extends Controller
      */
     public function show($id)
     {
-        return add::find($id);
+        $adds = add::find($id);
+        return view('path.post')->with('adds',$adds);
     }
     /**
      * Show the form for editing the specified resource.
@@ -60,7 +63,8 @@ class AddsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $adds = add::find($id);
+        return view('properties.edit')->with('adds',$adds);
     }
     /**
      * Update the specified resource in storage.
@@ -71,7 +75,16 @@ class AddsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $add= add::find($id);
+        $add->Pname = $request->input('Pname');
+        $add->Address = $request->input('Address');
+        $add->Area = $request->input('Area');
+        $add->Type = $request->input('Type');
+        $add->Price = $request->input('Price');
+        $add->user_id = auth()->user()->id;
+        $add->Status = 1;
+        $add->save();
+        return redirect('/home')->with('success','Property Updated');
     }
     /**
      * Remove the specified resource from storage.
@@ -81,6 +94,16 @@ class AddsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $add= add::find($id);
+        $add->delete();
+        return redirect('/home')->with('success','Property Deleted');
+    }
+    public function view_post($id){
+    {
+        $post = User::find($id);
+
+        dd($post);
+
+    }
     }
 }

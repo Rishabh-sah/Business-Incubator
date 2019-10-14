@@ -13,8 +13,30 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    You are logged in!
+                    @if(count($adds) > 0)
+                        <table class="table table-striped">
+                            <tr>
+                                <th>Title</th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                            @foreach($adds as $add)
+                                <tr>
+                                    <td>{{$add->Pname}}</td>
+                                    <td><a href="/properties/{{$add->id}}/edit" class="btn btn-default">Edit</a></td>
+                                    <td>
+                                        {!!Form::open(['action' => ['AddsController@destroy', $add->id], 'method' => 'POST', 'class' => 'pull-right'])!!}
+                                            {{Form::hidden('_method', 'DELETE')}}
+                                            {{Form::submit('Delete', ['class' => 'btn btn-danger'])}}
+                                        {!!Form::close()!!}
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </table>
+                    @else
+                        <p>You have no posts</p>
+                    @endif
+                    <button class='btn btn-primary' onclick="location.href='/seller/addproperty'">ADD PROPERTY</button>
                 </div>
             </div>
         </div>

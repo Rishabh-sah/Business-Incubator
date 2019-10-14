@@ -35,7 +35,7 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                             <li class="nav-item active">
-                                    <a class="nav-link" href="/">Home</a>
+                                    <a class="nav-link" href="/home">Home</a>
                                   </li>
                                   <li class="nav-item">
                                     <a class="nav-link" href="#">About</a>
@@ -84,6 +84,7 @@
         </nav>
 <div class='container'>
         <main class="py-4">
+            @include('inc.message')
             @yield('content')
         </main>
     </div></div>
