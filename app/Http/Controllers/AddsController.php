@@ -100,19 +100,4 @@ class AddsController extends Controller
         $add->delete();
         return redirect('/home')->with('success','Property Deleted');
     }
-    public function view_post($id){
-    {
-        $post = User::find($id);
-
-        dd($post);
-
-    }}
-    public function viewpost($id){
-        {
-            $post = add::find($id);
-    
-            dd($post);
-    
-        }
-    
-    }}
+}
