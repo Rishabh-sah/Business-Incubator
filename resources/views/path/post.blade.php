@@ -30,9 +30,19 @@
             <div class='container'>
             <h3>{{$adds->Pname}}</a></h3>
             <h5>Price= {{$adds->Price}} ({{$adds->Type}})</h5><h5>Location={{$adds->Address}}</h5><h5>Area of Land(in Sq.Ft)={{$adds->Area}}</h5>
-             
+            <h5>Owner: {{$users->name}}</h5>
+            <h5>Email: {{$users->email}}</h5>
+            <h5>Contact: {{$users->contact}}</h5>
         </div>
-        </div>
+        </div><br>
+        <div class='card'>
+          <div class='container'>
+          <h3>Owner Info</a></h3>
+          <h5>Owner: {{$users->name}}</h5>
+          <h5>Email: {{$users->email}}</h5>
+          <h5>Contact: {{$users->contact}}</h5>
+      </div>
+      </div>
         <br>
         
         @else

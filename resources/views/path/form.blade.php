@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <link rel="canonical" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
     <!-- Bootstrap core CSS -->
 
     <style>
@@ -20,24 +21,14 @@
       }
     </style>
     <!-- Custom styles for this template -->
+   
 </head>
-<body >
-        <br>
-        <h1>Properties</h1>
-        @if(count($adds)>0)
-        @foreach($adds as $add)
-        <div class='card'>
-            <div class='container'>
-            <h3><a href='properties/{{$add->id}}'>{{$add->Pname}}</a></h3>
-            <h5>Price= {{$add->Price}} ({{$add->Type}})</h5><h5>Location={{$add->Address}}</h5><h5>Area of Land(in Sq.Ft)={{$add->Area}}</h5>
-        </div>
-        </div>
-        <br>
-        @endforeach
-        {{$adds->links()}}
-        @else
-        <p>No Properties Found</p>
-        @endif
-        <div>
-        </div>
-@endsection 
+<body>
+      {!!Form::open(['action'=>['SearchsController@index'],'method'=>'GET'])!!}
+      {{Form::label('Address','Location')}}
+      {{Form::text('Address','',['class'=>'form-control','placeholder'=>'Location'])}}
+      <br />
+      {{Form::submit('Submit',['class'=>'btn btn-primary'])}}
+      {!!Form::close()!!}
+    </div >
+@endsection

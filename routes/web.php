@@ -1,5 +1,7 @@
 <?php
-
+use Illuminate\Support\Facades\Input;
+use App\Add;
+//use DB;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,20 +16,14 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/login', 'PagesController@login');
-Route::get('/register', 'PagesController@register');
-Route::get('/seller', 'PagesController@sdashboard');
-Route::get('/buyer', 'PagesController@bdashboard');
-Route::get('/help', 'PagesController@help');
-Route::get('/search', 'PagesController@search');
+Route::get('/searchproperty', 'PagesController@searchproperty');
+Route::resource('search', 'SearchsController');
 Route::get('/seller/addproperty', 'PagesController@addproperty');
 Route::resource('properties','AddsController');
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
-Route::any('/search',function(){
-    $q = Input::get ( 'q' );
-    $user = User::where('name','LIKE','%'.$q.'%')->orWhere('email','LIKE','%'.$q.'%')->get();
-    if(count($user) > 0)
-        return view('welcome')->withDetails($user)->withQuery ( $q );
-    else return view ('welcome')->withMessage('No Details found. Try to search again !');
+Route::get('/about','PagesController@about');
+Route::any('/srch',function(){
+    $Address = Input::get ( 'q' );
+    return view('searchs.index')->with('Address',$Address);
 });

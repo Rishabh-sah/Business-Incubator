@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <link rel="canonical" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
     <!-- Bootstrap core CSS -->
 
     <style>
@@ -20,30 +21,22 @@
       }
     </style>
     <!-- Custom styles for this template -->
+   
 </head>
-<body >
-        <br>
-        <h1>Properties</h1>
+<body>
+      <h1>Properties</h1>
         @if(count($adds)>0)
-        
+        @foreach($adds as $add)
         <div class='card'>
             <div class='container'>
-            <h3>{{$adds->Pname}}</a></h3>
-            <h5>Price= {{$adds->Price}} ({{$adds->Type}})</h5><h5>Location={{$adds->Address}}</h5><h5>Area of Land(in Sq.Ft)={{$adds->Area}}</h5>
-             
+            <h3><a href='search/{{$add->id}}'>{{$add->Pname}}</a></h3>
+            <h5>Price= {{$add->Price}} ({{$add->Type}})</h5><h5>Location={{$add->Address}}</h5><h5>Area of Land(in Sq.Ft)={{$add->Area}}</h5>
         </div>
-        </div><br>
-        <div class='card'>
-          <div class='container'>
-          <h3>Owner Info</a></h3>
-          <h5>Owner: {{$users->name}}</h5>
-          <h5>Email: {{$users->email}}</h5>
-          <h5>Contact: {{$users->contact}}</h5>
-      </div>
+        </div>
         <br>
-        
+        @endforeach
         @else
         <p>No Properties Found</p>
         @endif
-        <div>        </div>
-@endsection 
+    </div >
+@endsection

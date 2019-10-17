@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\add;
+use App\user;
 use DB;
 class AddsController extends Controller
 {
@@ -53,7 +54,8 @@ class AddsController extends Controller
     public function show($id)
     {
         $adds = add::find($id);
-        return view('path.post')->with('adds',$adds);
+        $users = user::find($adds->user_id);
+        return view('path.post')->with('adds',$adds)->with('users',$users);
     }
     /**
      * Show the form for editing the specified resource.
@@ -104,6 +106,13 @@ class AddsController extends Controller
 
         dd($post);
 
-    }
-    }
-}
+    }}
+    public function viewpost($id){
+        {
+            $post = add::find($id);
+    
+            dd($post);
+    
+        }
+    
+    }}

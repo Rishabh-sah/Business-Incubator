@@ -35,7 +35,7 @@
       </table> 
   
   <button class='btn btn-primary' onclick="location.href='/properties'">SHOW ALL PROPERTIES</button>
-        <button class='btn btn-primary float-right' onclick="location.href='/search'">SEARCH PROPERTIES</button>
+        <button class='btn btn-primary float-right' onclick="location.href='/searchproperty'">SEARCH PROPERTIES</button>
   <footer>©Copyright 2019</footer>
 </div>
   @endsection
